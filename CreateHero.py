@@ -1,6 +1,7 @@
 from tkinter import *
 from PIL import ImageTk, Image
 
+from Character import Character
 from BattleMage import BattleMage
 from Warrior import Warrior
 from Mage import Mage
@@ -14,11 +15,11 @@ def click():
         life = life_textentry.get()
         mana = mana_textentry.get()
 
-        if int(life) >= 100 and int(mana) <= 99:
+        if int(life) >= Character.LIFE_DELIMITER and int(mana) < Character.MANA_DELIMITER:
             character = Warrior(name, life, mana)
-        elif int(life) >= 100 and int(mana) >= 100:
+        elif int(life) >= Character.LIFE_DELIMITER and int(mana) >= Character.MANA_DELIMITER:
             character = BattleMage(name, life, mana)
-        elif int(life) <= 99 and int(mana) >= 100:
+        elif int(life) < Character.LIFE_DELIMITER and int(mana) >= Character.MANA_DELIMITER:
             character = Mage(name, life, mana)
         else:
             character = Peasant(name, life, mana)
