@@ -36,7 +36,7 @@ def close_window():
     exit()
 
 my_app = Tk()
-my_app.title('CREATE YOUR OWN MUM!')
+my_app.title('CREATE YOUR OWN HERO!')
 my_app.configure(background = 'black')
 
 logo = ImageTk.PhotoImage(Image.open('photos\layout.jpg'))
